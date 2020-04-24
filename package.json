@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "path-mode",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Check the permissions for a file path.",
+	"repository": "https://github.com/Richienb/path-mode.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -11,13 +11,20 @@
 		"index.d.ts"
 	],
 	"engines": {
-		"node": ">=10"
+		"node": ">=10.17 <11 || >=11.14"
 	},
 	"scripts": {
 		"lint": "xo",
 		"test": "xo && ava"
 	},
-	"keywords": [],
+	"keywords": [
+		"path",
+		"filesystem",
+		"access",
+		"readable",
+		"writable",
+		"directory"
+	],
 	"dependencies": {},
 	"devDependencies": {
 		"ava": "^3.7.0",

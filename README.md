@@ -1,41 +1,54 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# path-mode [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/path-mode/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/path-mode)
 
-My awesome module.
+Check the permissions for a file path.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/path-mode.png)](https://npmjs.com/package/path-mode)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install path-mode
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const {isWritable} = require("path-mode");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	console.log(await isWritable('package.json'));
+	//=> true
+})();
 ```
 
 ## API
 
-### theModule(input, options?)
+### isReadable(path)
 
-#### input
+Check if a path is readable.
+
+#### path
 
 Type: `string`
 
-Lorem ipsum.
+The path to check.
 
-#### options
+Returns a `Promise<boolean>`.
 
-Type: `object`
+### isWritable(path)
 
-##### postfix
+Check if a path is writable.
 
-Type: `string`\
-Default: `rainbows`
+Returns a `Promise<boolean>`.
 
-Lorem ipsum.
+### isReadableSync(path)
+
+Synchronously check if a path is readable.
+
+Returns a `boolean`.
+
+### isWritableSync(path)
+
+Synchronously check if a path is writable.
+
+Returns a `boolean`.

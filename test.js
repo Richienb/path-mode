@@ -1,13 +1,9 @@
 const test = require("ava")
-const theModule = require(".")
+const { isReadable, isWritable, isReadableSync, isWritableSync } = require(".")
 
-test("main", t => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number"
-	})
-
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+test("main", async t => {
+	t.true(await isReadable("package.json"))
+	t.true(await isWritable("package.json"))
+	t.true(isReadableSync("package.json"))
+	t.true(isWritableSync("package.json"))
 })

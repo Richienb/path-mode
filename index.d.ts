@@ -1,15 +1,27 @@
+export type PathModeFunction = (path: string) => Promise<boolean>
+
 /**
-My awesome module.
-@param input Lorem ipsum.
-@param postfix Lorem ipsum.
-@example
-```
-const theModule = require("the-module");
-
-theModule("unicorns");
-//=> 'unicorns & rainbows'
-```
+Check if a path is readable.
+@param path The path to check.
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string
+export const isReadable: PathModeFunction
 
-export = theModule
+/**
+Check if a path is writable.
+@param path The path to check.
+*/
+export const isWritable: PathModeFunction
+
+export type PathModeSyncFunction = (path: string) => boolean
+
+/**
+Synchronously check if a path is readable.
+@param path The path to check.
+*/
+export const isReadableSync: PathModeFunction
+
+/**
+Synchronously check if a path is writable.
+@param path The path to check.
+*/
+export const isWritableSync: PathModeSyncFunction
